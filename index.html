@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+    <title>For You</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Instrument+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Background Music -->
+    <audio id="music1" loop>
+        <source src="song1.m4a" type="audio/x-m4a">
+        <source src="song1.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="music2" loop>
+        <source src="song2.m4a" type="audio/x-m4a">
+        <source src="song2.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Three.js Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Grain Overlay -->
+    <div class="grain-overlay"></div>
+
+    <!-- Screen 0: Treasure Hunt Complete -->
+    <section class="screen active" id="screen0">
+        <div class="content-wrapper center-mode">
+            <div class="treasure-complete">
+                <div class="victory-icon">✦</div>
+                <span class="eyebrow">treasure hunt</span>
+                <h1 class="celebration-headline">
+                    <span class="line">Congratulations</span>
+                    <span class="line soft">You completed the game</span>
+                </h1>
+                <p class="soft-text">You found all the clues... but there's one last surprise</p>
+
+                <button class="btn btn-primary btn-glow" id="claimPrizeBtn">
+                    <span>Claim Your Prize</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screen 0.5: Password Screen -->
+    <section class="screen" id="screenPassword">
+        <div class="content-wrapper center-mode">
+            <div class="password-card">
+                <div class="lock-icon">✧</div>
+                <h2 class="sub-headline">One final thing...</h2>
+                <p class="password-instruction">
+                    Ask <span class="highlight-name">Atharv</span> <br>
+                    what the password is
+                </p>
+
+                <div class="password-input-wrapper">
+                    <input type="text" id="passwordInput" class="password-input" placeholder="Lemme hear you say it"
+                        autocomplete="off" autocapitalize="off">
+                </div>
+
+                <p class="error-message" id="errorMessage">Try again, with more love</p>
+
+                <button class="btn btn-primary" id="submitPasswordBtn">
+                    <span>Unlock</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screen 1: Main Question -->
+    <section class="screen" id="screen1">
+        <div class="content-wrapper">
+            <div class="floating-element top-left">✦</div>
+            <div class="floating-element top-right">✦</div>
+
+            <div class="main-content">
+                <span class="eyebrow">a question for you</span>
+                <h1 class="headline">
+                    <span class="line">Will you be</span>
+                    <span class="line emphasis">my girlfriend?</span>
+                </h1>
+
+                <div class="button-group">
+                    <button class="btn btn-primary btn-yes" id="yesBtn">
+                        <span>Yes</span>
+                    </button>
+                    <button class="btn btn-secondary btn-no" id="noBtn">
+                        <span>No</span>
+                    </button>
+                </div>
+
+                <p class="tease-text" id="teaseText"></p>
+            </div>
+
+            <div class="floating-element bottom-left">♡</div>
+            <div class="floating-element bottom-right">✦</div>
+        </div>
+    </section>
+
+    <!-- Screen 2: Try Again -->
+    <section class="screen" id="screen2">
+        <div class="content-wrapper center-mode">
+            <div class="sad-face">:(</div>
+            <h2 class="sub-headline">Please reconsider?</h2>
+            <p class="soft-text">I really meant to ask...</p>
+
+            <button class="btn btn-primary" id="tryAgainBtn">
+                <span>Let me think again</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Screen 3: Yay + Final -->
+    <section class="screen" id="screen3">
+        <div class="content-wrapper center-mode final-mode">
+            <div class="celebration-heart">♡</div>
+            <h2 class="celebration-text">Yay!</h2>
+
+            <h2 class="final-headline">It's official now</h2>
+            <p class="final-subtext">You're stuck with me</p>
+
+            <div class="final-signature">
+                <span>xoxo</span>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
