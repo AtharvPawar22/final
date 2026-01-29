@@ -10,20 +10,18 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Instrument+Sans:wght@400;500;600&display=swap"
         rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/build/three.min.js"></script>
+    <script src="https://unpkg.com/gsap@3.12.2/dist/gsap.min.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <!-- Background Music -->
-    <audio id="music1" loop>
+    <audio id="music1" loop preload="auto">
         <source src="song1.m4a" type="audio/x-m4a">
-        <source src="song1.mp3" type="audio/mpeg">
     </audio>
-    <audio id="music2" loop>
+    <audio id="music2" loop preload="auto">
         <source src="song2.m4a" type="audio/x-m4a">
-        <source src="song2.mp3" type="audio/mpeg">
     </audio>
 
     <!-- Three.js Canvas -->
@@ -134,7 +132,7 @@
         </div>
     </section>
 
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 
 </html>
